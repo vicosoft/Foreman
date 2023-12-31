@@ -14,3 +14,8 @@
 ** Create file /usr/local/bin/crearepo.sh
 ** Create file /etc/cron.d/reposync
 ** Create file /etc/cron.d/foreman_ContentView
+
+# Red Hat satellite repository with quite a few interesting things.
+
+- https://github.com/RedHatSatellite
+
