@@ -1,0 +1,1 @@
+./bootstrap.py -l admin -s SERVER2 -o ORGANIZATION -g GROUP -a "Red Hat 6 PROD" --legacy-purge --legacy-login rhn-user

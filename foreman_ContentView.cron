@@ -1,0 +1,24 @@
+# @vicosoft: Upgrade content view in foreman
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+RAILS_ENV=production
+FOREMAN_HOME=/usr/share/foreman
+
+# CentOS 6
+30 05 1 * * root /usr/bin/hammer content-view publish --name 'CentOS 6 PROD' --organization-id 5
+
+# CentOS 7
+30 07 1 * * root /usr/bin/hammer content-view publish --name 'CentOS 7 PROD' --organization-id 5
+
+# OLS 6 PROD
+30 09 1 * * root /usr/bin/hammer content-view publish --name 'OLS 6 PROD' --organization-id 5
+
+# OLS 7 PROD
+30 11 1 * * root /usr/bin/hammer content-view publish --name 'OLS 7 PROD' --organization-id 5
+
+# RHEL 6 PROD
+30 13 1 * * root /usr/bin/hammer content-view publish --name 'RHEL 6 PROD' --organization-id 5
+
+# RHEL 7 PROD
+30 15 1 * * root /usr/bin/hammer content-view publish --name 'RHEL 7 PROD' --organization-id 5

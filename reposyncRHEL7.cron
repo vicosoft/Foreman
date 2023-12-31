@@ -1,0 +1,15 @@
+# Cron for repository sync
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=
+# It is necessary to perform a yum updateinfo to regenerate the updateinfo.xml
+00 03 * * 4,5,6 root /usr/bin/yum updateinfo
+
+00 01 * * 4,5,6 root 'reposync --repoid=rhel-7-server-optional-rpms --repoid=rhel-7-server-ansible-2.5-rpms --repoid=rhel-7-server-extras-rpms --repoid=rhel-7-server-rpms --repoid=rhel-7-server-satellite-tools-6.3-rpms --repoid=rhel-server-rhscl-7-rpms --download-metadata -m -p /var/lib/pulp/repos/redhat7/'
+
+00 02 * * 4,5,6 root 'reposync --repoid=rhel-7-server-optional-rpms --repoid=rhel-7-server-ansible-2.5-rpms --repoid=rhel-7-server-extras-rpms --repoid=rhel-7-server-rpms --repoid=rhel-7-server-satellite-tools-6.3-rpms --repoid=rhel-server-rhscl-7-rpms --download-metadata -m -p /var/lib/pulp/repos/redhat7/'
+
+
+00 04 * * 4,5,6 root /usr/local/bin/crearepo.sh rhel-7-server-extras-rpms
+10 04 * * 4,5,6 root /usr/local/bin/crearepo.sh rhel-7-server-optional-rpms
+30 04 * * 4,5,6 root /usr/local/bin/crearepo.sh rhel-7-server-rpms
